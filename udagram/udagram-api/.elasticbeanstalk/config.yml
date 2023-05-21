@@ -2,6 +2,9 @@ branch-defaults:
   deployment-project:
     environment: test3-dev
     group_suffix: null
+  master:
+    environment: test3-dev
+    group_suffix: null
 environment-defaults:
   Test3-env:
     branch: null
