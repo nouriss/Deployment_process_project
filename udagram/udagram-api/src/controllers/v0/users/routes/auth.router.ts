@@ -84,6 +84,9 @@ router.post('/', async (req: Request, res: Response) => {
   const email = req.body.email;
   const plainTextPassword = req.body.password;
 
+  console.log(`Brouter.post/auth ${email}....`);
+  console.log(`Brouter.post/auth ${plainTextPassword}....`);
+
   if (!email || !EmailValidator.validate(email)) {
     return res.status(400).send({auth: false, message: 'Email is missing or malformed.'});
   }
@@ -98,7 +101,8 @@ router.post('/', async (req: Request, res: Response) => {
   }
 
   const generatedHash = await generatePassword(plainTextPassword);
-
+  
+  console.log(`create new user ${email}....`);
   //@ts-ignore
   const newUser = await new User({
     email: email,
