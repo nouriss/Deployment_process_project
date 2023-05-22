@@ -21,3 +21,5 @@ global:
   profile: null
   sc: git
   workspace_type: Application
+deploy:
+  artifact: ./www/Archive.zip
