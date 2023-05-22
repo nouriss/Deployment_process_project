@@ -15,7 +15,9 @@
     "prod": "npx tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
     "deploy": "npm run build && cd www && eb list && eb use test3-dev && eb deploy",
-    "build": "npm install . && npm audit fix --force  && npm run clean && tsc && cp -rf src/config www/config && cp -R .elasticbeanstalk www/.elasticbeanstalk && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
+    "build::www2zip": "cd www && l && zip -r Archive.zip . && cd ..",
+    "build::cp2www": "cp -rf src/config www/config && cp -R .elasticbeanstalk www/.elasticbeanstalk && cp .npmrc www/.npmrc && cp package.json www/package.json && build::www2zip",
+    "build": "npm install . && npm audit fix --force  && npm run clean && tsc && build::cp2www",
     "test": "echo \"Error: no test specified\" && exit 1",
     "set-env": "chmod +x ../set_env.sh && source ../set_env.sh"
   },
