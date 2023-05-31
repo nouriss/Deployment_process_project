@@ -1,16 +1,16 @@
 branch-defaults:
   deployment-project:
-    environment: test3-dev
+    environment: Deployment-project-env
     group_suffix: null
   master:
-    environment: test3-dev
+    environment: Deployment-project-env
     group_suffix: null
 environment-defaults:
   Test3-env:
     branch: null
     repository: null
 global:
-  application_name: test3
+  application_name: udagram-api
   default_ec2_keyname: null
   default_platform: Node.js 14 running on 64bit Amazon Linux 2
   default_region: us-east-1
