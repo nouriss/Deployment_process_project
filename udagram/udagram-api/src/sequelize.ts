@@ -10,3 +10,10 @@ export const sequelize = new Sequelize({
   dialect: "postgres",
   storage: ":memory:",
 });
+
+
+//console.log(`database username ${config.username}....`);
+//console.log(`database password ${config.password}....`);
+//console.log(`database database ${config.database}....`);
+//console.log(`database host     ${config.host}....`);
+
