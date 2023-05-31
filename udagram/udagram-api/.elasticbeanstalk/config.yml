@@ -1,16 +1,18 @@
 branch-defaults:
   deployment-project:
-    environment: Deployment-project-env
+    environment: DeploymentProject-env
     group_suffix: null
   master:
-    environment: Deployment-project-env
+    environment: DeploymentProject-env
     group_suffix: null
+deploy:
+  artifact: ./www/Archive.zip
 environment-defaults:
   Test3-env:
     branch: null
     repository: null
 global:
-  application_name:   udagram_api
+  application_name: udagram_api
   default_ec2_keyname: null
   default_platform: Node.js 14 running on 64bit Amazon Linux 2
   default_region: us-east-1
@@ -21,5 +23,3 @@ global:
   profile: null
   sc: git
   workspace_type: Application
-deploy:
-  artifact: ./www/Archive.zip
