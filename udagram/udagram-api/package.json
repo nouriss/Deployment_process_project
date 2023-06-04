@@ -19,7 +19,7 @@
     "log-env::test": "export -p",
     "log-env": "export -p | grep POSTGRES_HOST && export -p | grep POSTGRES_PASSWORD && export -p | grep RDS_POSTGRES_PASSWORD && export -p | grep  JWT_SECRET_", 
     "set-env": "chmod +x ../set_env.sh && source ../set_env.sh",
-    "set-env-prod": "chmod +x ../eb_set_env.sh && source ../eb_set_env.sh"
+    "set-env-prod": "chmod +x ../eb_set_env.sh && bash ../eb_set_env.sh"
   },
   "keywords": [],
   "author": "Gabriel Ruttner",
