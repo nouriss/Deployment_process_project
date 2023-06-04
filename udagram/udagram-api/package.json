@@ -13,12 +13,13 @@
     "dev": "npx ts-node-dev --respawn --transpile-only ./src/server.ts",
     "prod": "npx tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
-    "deploy": "npm run build && eb list && eb use Udagramapi-env && eb deploy --staged",
+    "deploy": "npm run build && eb list && eb use Udagramapi-env && eb deploy --staged && npm run set-env-prod",
     "build": "npm install . && npm audit fix --force  && npm run clean && tsc && cp -rf src/config www/config && cp -R .elasticbeanstalk www/.elasticbeanstalk && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1",
     "log-env::test": "export -p",
     "log-env": "export -p | grep POSTGRES_HOST && export -p | grep POSTGRES_PASSWORD && export -p | grep RDS_POSTGRES_PASSWORD && export -p | grep  JWT_SECRET_", 
-    "set-env": "chmod +x ../set_env.sh && source ../set_env.sh"
+    "set-env": "chmod +x ../set_env.sh && source ../set_env.sh",
+    "set-env-prod": "chmod +x ../eb_set_env.sh && source ../eb_set_env.sh"
   },
   "keywords": [],
   "author": "Gabriel Ruttner",
